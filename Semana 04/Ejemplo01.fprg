@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="mauri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-06-07 06:38:51 p.&#160;m."/>
+        <attribute name="created" value="bWF1cmk7QkxVRS1QQzsyMDIyLTA2LTA3OzA2OjMwOjQwIHAuwqBtLjsyNjIy"/>
+        <attribute name="edited" value="bWF1cmk7QkxVRS1QQzsyMDIyLTA2LTA3OzA2OjM4OjUxIHAuwqBtLjsxOzI3NDA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="montoCompra" type="Integer" array="False" size=""/>
+            <declare name="cantidadCompras" type="Integer" array="False" size=""/>
+            <declare name="descuento" type="Real" array="False" size=""/>
+            <declare name="montoFinal" type="Real" array="False" size=""/>
+            <output expression="&quot;Digite la cantidad de compras prev&#237;as: &quot;" newline="False"/>
+            <input variable="cantidadCompras"/>
+            <output expression="&quot;Digite el monto de la factura: &quot;" newline="False"/>
+            <input variable="montoCompra"/>
+            <if expression="cantidadCompras &gt;= 6 and montoCompra &gt;= 10000">
+                <then>
+                    <assign variable="descuento" expression="montoCompra * 0.35"/>
+                    <assign variable="montoFinal" expression="montoCompra - descuento"/>
+                </then>
+                <else>
+                    <assign variable="montoFinal" expression="montoCompra"/>
+                </else>
+            </if>
+            <output expression="&quot;El monto final es de : &quot; &amp; montoFinal" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
